@@ -24,13 +24,19 @@ double multiply(double number1, double number2) {
 	return number1 * number2;
 }
 
+double getPI() {
+	double pi = 2 * acos(0.0);
+	return pi;
+}
+
 void Menu() {
 	std::cout << "**************************\n";
 	std::cout << "1 - Add\n";
 	std::cout << "2 - Substract\n";
 	std::cout << "3 - Divide\n";
 	std::cout << "4 - Multiply\n";
-	std::cout << "5 - Exit\n";
+	std::cout << "5 - Get PI value\n";
+	std::cout << "6 - Exit\n";
 	std::cout << "**************************\n";
 	std::cout << "Choose following options (1-4): ";
 }
@@ -87,6 +93,13 @@ void CallFunction(int option) {
 		break;
 
 	case 5:
+
+		std::cout << "\nPi Value : " << getPI();
+		std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+		system("cls");
+		break;
+
+	case 6:
 		std::cout << "Bye bye!";
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		return;
@@ -103,10 +116,10 @@ void CallFunction(int option) {
 
 int main()
 {
-	std::cout << " --- Math Operations Tool verion 1.0 ---\n";
+	std::cout << " --- Math Operations Tool version 1.0 ---\n";
 	int option = 0;
 
-	while (option != 5)
+	while (option != 6)
 	{
 		Menu();
 		std::cin >> option;
