@@ -10,9 +10,8 @@ void Menu() {
 	cout << "**************************" << endl;
 	cout << "1 - Calculate Triangle Area" << endl;
 	cout << "2 - Multiply with PI Value" << endl;
-	cout << "3 - Calculate 1st. Grade Ecuation" << endl;
-	cout << "4 - Calculate 2nd. Grade Ecuation" << endl;
-	cout << "5 - Exit" << endl;
+	cout << "3 - Calculate 2nd. Grade Ecuation" << endl;
+	cout << "4 - Exit" << endl;
 	cout << "**************************" << endl;
 	cout << "Choose following options (1-3): ";
 }
@@ -23,9 +22,6 @@ void CallOption(int option) {
 	double var2 = 0;
 	double var3 = 0;
 	double PI_VALUE = 3.14159;
-	// Ecuation 
-	double value1, value2, xValue = 0;
-
 
 	switch (option)
 	{
@@ -49,24 +45,8 @@ void CallOption(int option) {
 		this_thread::sleep_for(chrono::milliseconds(5000));
 		system("cls");
 		break;
-	case 3:
-		cout << "\n";
-		cout << "[num1]x + [num2] -> find 'x' value:" << endl;
-		this_thread::sleep_for(chrono::milliseconds(4000));
-		cout << "Insert 'num1' value: " << endl;
-		cin >> value1;
-		cout << "Insert 'num2' value: " << endl;
-		cin >> value2;
 
-		value2 = -value2;
-		xValue = value2 / value1;
-		cout << "'x' Value result is: " << xValue << endl;
-		this_thread::sleep_for(chrono::milliseconds(5000));
-		system("cls");
-		break;
-
-
-	case 5:
+	case 4:
 		cout << "Closing Program...";
 		this_thread::sleep_for(std::chrono::milliseconds(2000));
 		return;
