@@ -5,6 +5,7 @@
 #include <thread>
 #include <chrono>
 #include "geometry.h"
+#include "Ecuation.h"
 using namespace std;
 
 void Menu() {
@@ -19,22 +20,17 @@ void Menu() {
 	cout << "Choose following options (1-5): ";
 }
 
-
-
-
 void CallOption(int option) {
-
 	double result = 0;
-	double var1 = 0;
-	double var2 = 0;
-	double var3 = 0;
+	double var1, var2, var3 = 0;
+
 	double PI_VALUE = 3.14159;
-	// Ecuation 
-	double value1, value2, xValue = 0;
+	// Ecuation
+	double value1, value2, value3, xValue, xValue2 = 0;
+
 	//Classes
 	geometry g;
-	
-
+	Ecuation Ecu;
 
 	switch (option)
 	{
@@ -43,8 +39,8 @@ void CallOption(int option) {
 		cin >> var1;
 		cout << "Enter height value: " << endl;
 		cin >> var2;
-		g.set_values(var1,var2);
-		result = g.CalculateTriangleArea();		
+		g.set_values(var1, var2);
+		result = g.CalculateTriangleArea();
 		cout << "Triangle area is: " << result << endl;
 		this_thread::sleep_for(chrono::milliseconds(3000));
 		system("cls");
@@ -62,7 +58,6 @@ void CallOption(int option) {
 		system("cls");
 		break;
 
-
 	case 3:
 
 		cout << "Enter a value: " << endl;
@@ -73,7 +68,7 @@ void CallOption(int option) {
 		system("cls");
 		break;
 
-	case 4:
+	case 4: // 1st. grade ecuation
 		cout << "\n";
 		cout << "[num1]x + [num2] -> find 'x' value:" << endl;
 		this_thread::sleep_for(chrono::milliseconds(4000));
@@ -82,11 +77,29 @@ void CallOption(int option) {
 		cout << "Insert 'num2' value: " << endl;
 		cin >> value2;
 
-		value2 = -value2;
-		xValue = value2 / value1;
+		xValue = Ecu.FirstGradeEcuation(value1, value2);
 		cout << "'x' Value result is: " << xValue << endl;
 		this_thread::sleep_for(chrono::milliseconds(5000));
 		system("cls");
+		break;
+
+	case 5: // 2nd. grade ecuation
+		cout << "\n";
+		cout << "[num1]x² + [num2]x + [num3] -> find 'x' value: " << endl;
+		this_thread::sleep_for(chrono::milliseconds(4000));
+		cout << "Insert 'num1' value: " << endl;
+		cin >> value1;
+		cout << "Insert 'num2' value: " << endl;
+		cin >> value2;
+		cout << "Insert 'num3' value: " << endl;
+		cin >> value3;
+		xValue = Ecu.SecondGradeEcuationFirstRoute(value1, value2, value3);
+		xValue2 = Ecu.SecondGradeEcuationSecondRoute(value1, value2, value3);
+		cout << "'x1 value is: '" << xValue << "\n" << endl;
+		cout << "'x2' value is: " << xValue2 << endl;
+		this_thread::sleep_for(chrono::milliseconds(5000));
+		system("cls");
+
 		break;
 
 	case 6:

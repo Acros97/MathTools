@@ -1,0 +1,6 @@
+﻿  Ecuation.cpp
+  Math.cpp
+c:\users\usuario\downloads\math-assistant-console-program-main\math\math.cpp(42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\usuario\downloads\math-assistant-console-program-main\math\math.cpp(54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Math.vcxproj -> C:\Users\usuario\Downloads\Math-assistant-Console-Program-main\x64\Debug\Math.exe
