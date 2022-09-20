@@ -9,6 +9,86 @@
 using namespace std;
 int OPTION_MENU = -1;
 
+void OptionEcuation() {
+	Calculator calc;
+	double value1, value2, value3, xValue = 0;
+	int option = 0;
+	cout << "\n";
+	cout << "Find 'x' value\n";
+	cout << "1.		[num1]x + [num2] = 0" << endl;
+	cout << "2.		[num1]x + [num2] = [num3]" << endl;
+	cout << "Choose [1 o 2]: " << endl;
+	cin >> option;
+	switch (option)
+	{
+	case 1:
+		try {
+			cout << "Insert 'num1' value: " << endl;
+			cin >> value1;
+			if (cin.fail())
+				throw(xValue);
+
+			cout << "Insert 'num2' value: " << endl;
+			cin >> value2;
+			if (cin.fail())
+				throw(xValue);
+
+			xValue = calc.getOption1XValue(value1, value2);
+			cout << value1 << "x" << " + " << value2 << " = 0" << endl;
+			cout << "'x' Value result is: " << xValue << endl;
+			this_thread::sleep_for(chrono::milliseconds(6000));
+			system("cls");
+		}
+		catch (double valueEx) {
+			cout << "Choose a valid number!" << endl;
+			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+			system("cls");
+			OPTION_MENU = 0;
+		}
+
+		break;
+
+	case 2:
+		try {
+			cout << "Insert 'num1' value: " << endl;
+			cin >> value1;
+			if (cin.fail())
+				throw(xValue);
+
+			cout << "Insert 'num2' value: " << endl;
+			cin >> value2;
+			if (cin.fail())
+				throw(xValue);
+
+			cout << "Insert 'num3' value: " << endl;
+			cin >> value3;
+			if (cin.fail())
+				throw(xValue);
+
+			xValue = calc.getOption2XValue(value1, value2, value3);
+			cout << value1 << "x" << " + " << value2 << " = " << value3 << endl;
+			cout << "'x' Value result is: " << xValue << endl;
+			this_thread::sleep_for(chrono::milliseconds(6000));
+			system("cls");
+		}
+		catch (double valueEx) {
+			cout << "Choose a valid number!" << endl;
+			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+			system("cls");
+			OPTION_MENU = 0;
+		}
+
+		break;
+
+	default:
+		cout << "Choose a valid option!" << endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+		system("cls");
+		OPTION_MENU = 0;
+		break;
+	}
+}
+
 void Menu() {
 	cout << "**************************" << endl;
 	cout << "1 - Calculate Triangle Area" << endl;
@@ -33,7 +113,7 @@ void CallOption(int option) {
 	double var3 = 0;
 	double PI_VALUE = 3.14159;
 	// Ecuation
-	double value1, value2, xValue = 0;
+	double value1, value2, value3 = 0;
 	//Classes
 	geometry g;
 	Calculator c;
@@ -101,27 +181,8 @@ void CallOption(int option) {
 
 		break;
 
-	case 4:
-		cout << "\n";
-		cout << "[num1]x + [num2] -> find 'x' value:" << endl;
-		this_thread::sleep_for(chrono::milliseconds(4000));
-		cout << "Insert 'num1' value: " << endl;
-		cin >> value1;
-		if (value1 != 0) {
-			cout << "Insert 'num2' value: " << endl;
-			cin >> value2;
-			value2 = -value2;
-			xValue = value2 / value1;
-			cout << "'x' Value result is: " << xValue << endl;
-			this_thread::sleep_for(chrono::milliseconds(5000));
-			system("cls");
-		}
-		else {
-			cout << "Choose a valid number!" << endl;
-			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-			system("cls");
-			OPTION_MENU = 0;
-		}
+	case 4: // First grade ecuation
+		OptionEcuation();
 		break;
 
 	case 6:
