@@ -121,18 +121,24 @@ void CallOption(int option) {
 	switch (option) // OPTION_MENU = 0 --> EXIT PROGRAM
 	{
 	case 1:
-		cout << "Enter base value: " << endl;
-		cin >> var1;
-		if (var1 != 0) {
+		try {
+			cout << "Enter base value: " << endl;
+			cin >> var1;
+			if (cin.fail())
+				throw(var1);
+
 			cout << "Enter height value: " << endl;
 			cin >> var2;
+			if (cin.fail())
+				throw(var2);
+
 			g.set_values(var1, var2);
 			result = g.CalculateTriangleArea();
 			cout << "Triangle area is: " << result << endl;
 			this_thread::sleep_for(chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
@@ -142,18 +148,24 @@ void CallOption(int option) {
 		break;
 
 	case 2:
-		cout << "Enter base value: " << endl;
-		cin >> var1;
-		if (var1 != 0) {
+		try {
+			cout << "Enter base value: " << endl;
+			cin >> var1;
+			if (cin.fail())
+				throw(var1);
 			cout << "Enter height value: " << endl;
 			cin >> var2;
+			if (cin.fail())
+				throw(var2);
+
 			g.set_values(var1, var2);
 			result = g.CalculateRectangleArea();
 			cout << "Rectangle area is: " << result << endl;
 			this_thread::sleep_for(chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
@@ -163,16 +175,19 @@ void CallOption(int option) {
 		break;
 
 	case 3:
+		try {
+			cout << "Enter a value: " << endl;
+			cin >> var1;
+			if (cin.fail())
+				throw(var1);
 
-		cout << "Enter a value: " << endl;
-		cin >> var1;
-		if (var1 != 0) {
 			result = var1 * PI_VALUE;
 			cout << "Result (" << var1 << " * " << PI_VALUE << ") = " << result << endl;
 			this_thread::sleep_for(chrono::milliseconds(5000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
@@ -186,18 +201,22 @@ void CallOption(int option) {
 		break;
 
 	case 6:
-
-		std::cout << "\nPlease enter first number: \n";
-		std::cin >> var1;
-		if (var1 != 0) {
+		try {
+			std::cout << "\nPlease enter first number: \n";
+			std::cin >> var1;
+			if (cin.fail())
+				throw(var1);
 			std::cout << "Please enter second number: \n";
 			std::cin >> var2;
+			if (cin.fail())
+				throw(var2);
 			result = c.addition(var1, var2);
 			std::cout << "Result is: " << result;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 			system("cls");
@@ -207,18 +226,23 @@ void CallOption(int option) {
 		break;
 
 	case 7:
-
-		std::cout << "\nPlease enter first number: \n";
-		std::cin >> var1;
-		if (var1 != 0) {
+		try {
+			std::cout << "\nPlease enter first number: \n";
+			std::cin >> var1;
+			if (cin.fail())
+				throw(var1);
 			std::cout << "Please enter second number: \n";
 			std::cin >> var2;
+			if (cin.fail())
+				throw(var2);
+
 			result = c.subtract(var1, var2);
 			std::cout << "Result is: " << result;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
@@ -228,17 +252,22 @@ void CallOption(int option) {
 		break;
 
 	case 8:
-		std::cout << "\nPlease enter first number: \n";
-		std::cin >> var1;
-		if (var1 != 0) {
+		try {
+			std::cout << "\nPlease enter first number: \n";
+			std::cin >> var1;
+			if (cin.fail())
+				throw(var1);
 			std::cout << "Please enter second number: \n";
 			std::cin >> var2;
+			if (cin.fail())
+				throw(var2);
 			result = c.divide(var1, var2);
 			std::cout << "Result is: " << result;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
@@ -247,17 +276,22 @@ void CallOption(int option) {
 		break;
 
 	case 9:
-		std::cout << "\nPlease enter first number: \n";
-		std::cin >> var1;
-		if (var1 != 0) {
+		try {
+			std::cout << "\nPlease enter first number: \n";
+			std::cin >> var1;
+			if (cin.fail())
+				throw(var1);
 			std::cout << "Please enter second number: \n";
 			std::cin >> var2;
+			if (cin.fail())
+				throw(var2);
 			result = c.multiply(var1, var2);
 			std::cout << "Result is: " << result;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");
 		}
-		else {
+
+		catch (double exValue) {
 			cout << "Choose a valid number!" << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 			system("cls");

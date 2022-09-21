@@ -1,10 +1,15 @@
-﻿  Calculator.cpp
-  Math.cpp
+﻿  Math.cpp
 c:\users\usuario\downloads\mathtools-main\math\math.cpp(42): warning C4101: 'valueEx': unreferenced local variable
 c:\users\usuario\downloads\mathtools-main\math\math.cpp(74): warning C4101: 'valueEx': unreferenced local variable
-c:\users\usuario\downloads\mathtools-main\math\math.cpp(129): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\usuario\downloads\mathtools-main\math\math.cpp(150): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(135): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(161): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 c:\users\usuario\downloads\mathtools-main\math\math.cpp(116): warning C4101: 'value2': unreferenced local variable
 c:\users\usuario\downloads\mathtools-main\math\math.cpp(116): warning C4101: 'value1': unreferenced local variable
-  Generating Code...
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(141): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(168): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(190): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(219): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(245): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(270): warning C4101: 'exValue': unreferenced local variable
+c:\users\usuario\downloads\mathtools-main\math\math.cpp(294): warning C4101: 'exValue': unreferenced local variable
   Math.vcxproj -> C:\Users\usuario\Downloads\MathTools-main\x64\Debug\Math.exe
